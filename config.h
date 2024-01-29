@@ -13,8 +13,9 @@
 //static char *font = "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 
 static char *fonts[] = {
+       "JetBrainsMono Nerd Font:pixelsize=18:antialias=true:autohint=true",
+       "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
        "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
        "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
        "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
        "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
