@@ -22,7 +22,7 @@ static char *fonts[] = {
 };
 static size_t currentfont = 0;
 
-static int borderpx = 0;
+static int borderpx = 4;
 
 /*
  * What program is execed by st depends of these precedence rules:
