@@ -1,29 +1,23 @@
---- config.def.h	2022-03-09 08:28:40.186246176 -0300
-+++ config.def.h	2022-03-09 08:26:03.194323581 -0300
-@@ -129,14 +131,22 @@ static const char *colorname[] = {
- 
- /*
-  * Default colors (colorname index)
-- * foreground, background, cursor, reverse cursor
-+ * foreground, background, cursor
+--- config.def.h
++++ config.def.h
+@@ -5,7 +5,11 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
--unsigned int defaultfg = 258;
--unsigned int defaultbg = 259;
--unsigned int defaultcs = 256;
-+unsigned int defaultfg = 257;
-+unsigned int defaultbg = 256;
-+unsigned int defaultcs = 257;
- static unsigned int defaultrcs = 257;
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *fonts[] = {
++	"Liberation Mono:pixelsize=12:antialias=true:autohint=true",
++	"Gohu GohuFont:pixelsize=11:antialias=false:autohint=false",
++};
++static size_t currentfont = 0;
+ static int borderpx = 2;
  
  /*
-+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
-+ * will reverse too. Another logic would only make the simple feature too
-+ * complex.
-+ */
-+unsigned int defaultitalic = 7;
-+unsigned int defaultunderline = 7;
-+
-+/*
-  * Default shape of cursor
-  * 2: Block ("█")
-  * 4: Underline ("_")
+@@ -201,6 +205,7 @@ static Shortcut shortcuts[] = {
+ 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+ 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+ 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
++	{ TERMMOD,              XK_S,           cyclefonts,     {}        },
+ };
+ 
+ /*

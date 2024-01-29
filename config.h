@@ -6,11 +6,20 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+//static char *font = "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 //static char *font = "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
 //static char *font = "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 //static char *font = "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 //static char *font = "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+
+static char *fonts[] = {
+       "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
+       "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+};
+static size_t currentfont = 0;
 
 static int borderpx = 4;
 
@@ -255,6 +264,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_S,           cyclefonts,     {}        },
 };
 
 /*
