@@ -14,11 +14,11 @@
 
 static char *fonts[] = {
        "JetBrainsMono Nerd Font:pixelsize=18:antialias=true:autohint=true",
-       "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
-       "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       //"Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
+       //"RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       //"Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       //"MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       //"FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
 };
 static size_t currentfont = 0;
 
@@ -201,7 +201,7 @@ unsigned int defaultunderline = 7;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
