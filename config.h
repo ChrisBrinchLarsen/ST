@@ -14,15 +14,21 @@
 
 static char *fonts[] = {
        "JetBrainsMono Nerd Font:pixelsize=18:antialias=true:autohint=true",
-       //"Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
-       //"RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       //"Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       //"MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       //"FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "Inconsolata Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
+       "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "CaskaydiaMono Nerd FontMono:pixelsize=18:style=SemiLight:antialias=true:autohint=true", // Almost perfect
+       "Arimo Nerd Font:pixelsize=18:antialias=true:autohint=true", // Almost perfect
+       "AnonymicePro Nerd Font Mono:pixelsize=18:antialias=true:autohint=true", // Almost perfect
+       "0xProto Nerd Font Mono:pixelsize=16:antialias=true:autohint=true", // Almost perfect
+       "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
+       "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+       "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
 };
 static size_t currentfont = 0;
 
-static int borderpx = 4;
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -110,7 +116,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.93, alphaUnfocused = 0.4;
+float alpha = 0.9, alphaUnfocused = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -201,7 +207,7 @@ unsigned int defaultunderline = 7;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
