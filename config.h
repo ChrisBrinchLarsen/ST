@@ -1,45 +1,11 @@
 /* See LICENSE file for copyright and license details. */
-
-/*
- * appearance
- *
- * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
- */
+#import "masterConfig.h"
 
 // static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-static char *font = "JetBrains Mono Medium:pixelsize=16:antialias=true:autohint=true";
-static char *font2[] = {
-    "Hack Nerd Font Propo:pixelsize=19:antialias=true:autohint=true", // Nerd Icons
-    "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true", // Emojies
-    "Source Han Sans JP:pixelsize=16:antialias=true:autohint=true", // Japanese
-    // "OpenMoji Color:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
-    // "Twemoji:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
-    // "JoyPixels:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
-    // "Symbola:pixelsize=16:antialias=true:autohint=true", // Unicode
+static char *font = stFont;
+static char **font2 = backUpFonts;
 
-    };
-//static char *font = "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
-//static char *font = "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-//static char *font = "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-//static char *font = "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-
-// static char *fonts[] = {
-//        "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
-//        "Inconsolata Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
-//        "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "CaskaydiaMono Nerd FontMono:pixelsize=18:style=SemiLight:antialias=true:autohint=true", // Almost perfect
-//        "Arimo Nerd Font:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-//        "AnonymicePro Nerd Font Mono:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-//        "0xProto Nerd Font Mono:pixelsize=16:antialias=true:autohint=true", // Almost perfect
-//        "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
-//        "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-// };
-// static size_t currentfont = 0;
-
-static int borderpx = 1;
+static int borderpx = stborderpx;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -124,10 +90,10 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.9, alphaUnfocused = 0.7;
+float alpha = stFocused, alphaUnfocused = stUnfocused;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -144,7 +110,7 @@ static const char *colorname[] = {
     [3] = "#ffc02e", /* My yellow  */
 
     //[4] = "#bd93f9", /* blue    */
-    [4] = "#30ffa4", /* My blue    */
+    [4] = mainColorLight, /* My blue    */
 
     //[5] = "#ff79c6", /* magenta */
     [5] = "#a12eff", /* My magenta */
@@ -167,7 +133,7 @@ static const char *colorname[] = {
     [11] = "#ffc02e", /* My yellow  */
 
     //[12] = "#bd93f9", /* blue    */
-    [12] = "#30ffa4", /* My blue    */
+    [12] = mainColorLight, /* My blue    */
 
     //[13] = "#ff79c6", /* magenta */
     [13] = "#a12eff", /* My magenta */
@@ -179,7 +145,7 @@ static const char *colorname[] = {
                                    
     /* special colors */
     //[256] = "#282a36", /* background */
-    [256] = "#031624", // My background
+    [256] = mainColorDark, // My background
     [257] = "#f8f8f2", /* foreground */
 
 	/* more colors can be added after 255 to use with DefaultXX */
@@ -218,7 +184,7 @@ unsigned int defaultunderline = 7;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = cursorType;
 
 /*
  * Default columns and rows numbers
