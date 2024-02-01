@@ -6,27 +6,38 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-//static char *font = "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+// static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "JetBrains Mono Medium:pixelsize=16:antialias=true:autohint=true";
+static char *font2[] = {
+    "Hack Nerd Font Propo:pixelsize=19:antialias=true:autohint=true", // Nerd Icons
+    "Noto Color Emoji:pixelsize=16:antialias=true:autohint=true", // Emojies
+    "Source Han Sans JP:pixelsize=16:antialias=true:autohint=true", // Japanese
+    // "OpenMoji Color:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
+    // "Twemoji:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
+    // "JoyPixels:pixelsize=16:antialias=true:autohint=true", // Other emoji variants
+    // "Symbola:pixelsize=16:antialias=true:autohint=true", // Unicode
+
+    };
 //static char *font = "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
 //static char *font = "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 //static char *font = "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 //static char *font = "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
 
-static char *fonts[] = {
-       "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
-       "Inconsolata Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
-       "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "CaskaydiaMono Nerd FontMono:pixelsize=18:style=SemiLight:antialias=true:autohint=true", // Almost perfect
-       "Arimo Nerd Font:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-       "AnonymicePro Nerd Font Mono:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-       "0xProto Nerd Font Mono:pixelsize=16:antialias=true:autohint=true", // Almost perfect
-       "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
-       "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-       "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-};
-static size_t currentfont = 0;
+// static char *fonts[] = {
+//        "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
+//        "Inconsolata Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
+//        "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+//        "CaskaydiaMono Nerd FontMono:pixelsize=18:style=SemiLight:antialias=true:autohint=true", // Almost perfect
+//        "Arimo Nerd Font:pixelsize=18:antialias=true:autohint=true", // Almost perfect
+//        "AnonymicePro Nerd Font Mono:pixelsize=18:antialias=true:autohint=true", // Almost perfect
+//        "0xProto Nerd Font Mono:pixelsize=16:antialias=true:autohint=true", // Almost perfect
+//        "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
+//        "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+//        "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+//        "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+//        "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+// };
+// static size_t currentfont = 0;
 
 static int borderpx = 1;
 
@@ -271,7 +282,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ TERMMOD,              XK_S,           cyclefonts,     {}        },
+	// { TERMMOD,              XK_S,           cyclefonts,     {}        },
 };
 
 /*
