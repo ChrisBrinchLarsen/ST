@@ -101,22 +101,22 @@ static const char *colorname[] = {
     [0] = "#000000", /* black   */
 
     //[1] = "#ff5555", /* red     */
-    [1] = "#FF2E43", /* My red     */
+    [1] = "#E63939", /* My red     */
 
     //[2] = "#50fa7b", /* green   */
-    [2] = "#2EFF4D", /* My green   */
+    [2] = "#39E653", /* My green   */
 
     //[3] = "#f1fa8c", /* yellow  */
-    [3] = "#ffc02e", /* My yellow  */
+    [3] = "#E6E339", /* My yellow  */
 
     //[4] = "#bd93f9", /* blue    */
-    [4] = mainColorLight, /* My blue    */
+    [4] = "#393CE6", /* My blue    */
 
     //[5] = "#ff79c6", /* magenta */
-    [5] = "#a12eff", /* My magenta */
+    [5] = "#7839E6", /* My magenta */
 
     //[6] = "#8be9fd", /* cyan    */
-    [6] = "#00ada7", /* My cyan    */
+    [6] = "#39E6A4", /* My cyan    */
 
     [7] = "#bbbbbb", /* white   */
                                   
@@ -124,22 +124,22 @@ static const char *colorname[] = {
     [8]  = "#44475a", /* black   */
 
     //[9]  = "#ff5555", /* red     */
-    [9] = "#FF2E43", /* My red     */
+    [9] = "#E62222", /* My red     */
 
     //[10] = "#50fa7b", /* green   */
-    [10] = "#2EFF4D", /* My green   */
+    [10] = "#22E640", /* My green   */
 
     //[11] = "#f1fa8c", /* yellow  */
-    [11] = "#ffc02e", /* My yellow  */
+    [11] = "#E6E322", /* My yellow  */
 
     //[12] = "#bd93f9", /* blue    */
-    [12] = mainColorLight, /* My blue    */
+    [12] = "#2226E6", /* My blue    */
 
     //[13] = "#ff79c6", /* magenta */
-    [13] = "#a12eff", /* My magenta */
+    [13] = "#6A22E6", /* My magenta */
 
     //[14] = "#8be9fd", /* cyan    */
-    [14] = "#00ada7", /* My cyan    */
+    [14] = "#22E69B", /* My cyan    */
 
     [15] = "#ffffff", /* white   */
                                    
@@ -149,10 +149,10 @@ static const char *colorname[] = {
     [257] = "#f8f8f2", /* foreground */
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	// "#cccccc",
+	// "#555555",
+	// "gray90", /* default foreground colour */
+	// "black", /* default background colour */
 };
 
 
