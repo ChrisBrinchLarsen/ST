@@ -5,30 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-
-static char *font = "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true";
-//static char *font = "Monoid Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
-//static char *font = "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-//static char *font = "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-//static char *font = "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-
-// static char *fonts[] = {
-//        "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true",
-//        "Inconsolata Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
-//        "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "CaskaydiaMono Nerd FontMono:pixelsize=18:style=SemiLight:antialias=true:autohint=true", // Almost perfect
-//        "Arimo Nerd Font:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-//        "AnonymicePro Nerd Font Mono:pixelsize=18:antialias=true:autohint=true", // Almost perfect
-//        "0xProto Nerd Font Mono:pixelsize=16:antialias=true:autohint=true", // Almost perfect
-//        "Monoid Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",
-//        "RobotoMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "Iosevka Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "MartianMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-//        "FiraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
-// };
-// static size_t currentfont = 0;
-
-static int borderpx = 1;
+static char *font = "JetBrainsMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -75,7 +53,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 2;
 static double maxlatency = 33;
 
 /*
@@ -113,92 +91,54 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.9, alphaUnfocused = 0.7;
+float alpha = 0.93, alphaUnfocused = 0.75;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-    /* 8 normal colors */
-    [0] = "#000000", /* black   */
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	//"yellow3",
+	"#ed7d31",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-    //[1] = "#ff5555", /* red     */
-    [1] = "#FF2E43", /* My red     */
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
-    //[2] = "#50fa7b", /* green   */
-    [2] = "#2EFF4D", /* My green   */
-
-    //[3] = "#f1fa8c", /* yellow  */
-    [3] = "#ffc02e", /* My yellow  */
-
-    //[4] = "#bd93f9", /* blue    */
-    [4] = "#30ffa4", /* My blue    */
-
-    //[5] = "#ff79c6", /* magenta */
-    [5] = "#a12eff", /* My magenta */
-
-    //[6] = "#8be9fd", /* cyan    */
-    [6] = "#00ada7", /* My cyan    */
-
-    [7] = "#bbbbbb", /* white   */
-                                  
-    /* 8 bright colors */
-    [8]  = "#44475a", /* black   */
-
-    //[9]  = "#ff5555", /* red     */
-    [9] = "#FF2E43", /* My red     */
-
-    //[10] = "#50fa7b", /* green   */
-    [10] = "#2EFF4D", /* My green   */
-
-    //[11] = "#f1fa8c", /* yellow  */
-    [11] = "#ffc02e", /* My yellow  */
-
-    //[12] = "#bd93f9", /* blue    */
-    [12] = "#30ffa4", /* My blue    */
-
-    //[13] = "#ff79c6", /* magenta */
-    [13] = "#a12eff", /* My magenta */
-
-    //[14] = "#8be9fd", /* cyan    */
-    [14] = "#00ada7", /* My cyan    */
-
-    [15] = "#ffffff", /* white   */
-                                   
-    /* special colors */
-    //[256] = "#282a36", /* background */
-    [256] = "#031624", // My background
-    [257] = "#f8f8f2", /* foreground */
+	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
 	"gray90", /* default foreground colour */
 	"black", /* default background colour */
+	"#1e1c19",
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 260;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
-unsigned int bg = 256, bgUnfocused = 256;
-
-/*
- * Colors used, when the specific fg == defaultfg. So in reverse mode this
- * will reverse too. Another logic would only make the simple feature too
- * complex.
- */
-unsigned int defaultitalic = 7;
-unsigned int defaultunderline = 7;
-
-
-
+unsigned int bg = 260, bgUnfocused = 260;
 
 /*
  * Default shape of cursor
@@ -217,11 +157,10 @@ static unsigned int cols = 80;
 static unsigned int rows = 24;
 
 /*
- * Default colour and shape of the mouse cursor
+ * Default shape of the mouse cursor
  */
-static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 7;
-static unsigned int mousebg = 0;
+
+static char* mouseshape = "xterm";
 
 /*
  * Color used to display font attributes when fontconfig selected a font which
@@ -271,7 +210,6 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	// { TERMMOD,              XK_S,           cyclefonts,     {}        },
 };
 
 /*
@@ -349,7 +287,7 @@ static Key key[] = {
 	{ XK_KP_Delete,     ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[P",       -1,    0},
+	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",       -1,    0},
 	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +2,    0},
 	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +2,    0},
@@ -417,7 +355,7 @@ static Key key[] = {
 	{ XK_Delete,        ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0},
+	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",       -1,    0},
 	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0},
 	{ XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0},
